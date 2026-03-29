@@ -1,0 +1,39 @@
+style_identity:
+  concept: "Modern Professional & Intellectual Clarity"
+  atmosphere: "Clean, Trustworthy, Insightful, Forward-thinking"
+  visual_weight: "Balanced with generous whitespace"
+
+color_palette:
+  primary:
+    hex: "#002B5B"
+    role: "Deep Navy - Represents stability and professional authority"
+  secondary:
+    hex: "#FFFFFF"
+    role: "Pure White - Base for high readability and transparency"
+  accent:
+    hex: "#00A8E8"
+    role: "Vibrant Cyan - Highlights key information and CTA"
+  neutral:
+    hex: "#F4F7FA"
+    role: "Soft Gray/Blue - Used for background sections to create depth"
+  text:
+    main: "#1A1A1A"
+    sub: "#666666"
+
+typography:
+  style: "Modern Sans-serif"
+  characteristics:
+    - "High X-height for readability"
+    - "Varied font weights (Bold for headers, Regular for body)"
+    - "Ample line-height (1.6 - 1.8) to prevent visual fatigue"
+
+design_elements:
+  borders: "Minimal or subtle light-gray lines"
+  border_radius: "Small (4px - 8px) for a crisp, disciplined look"
+  shadows: "Soft, natural elevation (no heavy borders)"
+  imagery: "High-quality, conceptual photography with cool-tone filters"
+
+ui_principles:
+  - "Content-first approach"
+  - "Strategic use of whitespace to separate logical blocks"
+  - "Clear visual hierarchy using scale and color contrast"
