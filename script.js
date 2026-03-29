@@ -30,13 +30,18 @@ window.addEventListener('scroll', () => {
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-anchor');
 
+// Pre-build Map for O(1) lookup instead of forEach on every intersection
+const anchorMap = new Map(
+  Array.from(navAnchors).map(a => [a.dataset.section, a])
+);
+
 const navObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        navAnchors.forEach(a => {
-          a.classList.toggle('active', a.dataset.section === entry.target.id);
-        });
+        anchorMap.forEach(a => a.classList.remove('active'));
+        const active = anchorMap.get(entry.target.id);
+        if (active) active.classList.add('active');
       }
     });
   },
@@ -100,6 +105,9 @@ const imgMap = {
   sns:   { src: 'image/SNS-Photo-Generator.png',  alt: 'SNS Photo Generator' },
 };
 
+const FOCUSABLE = 'a[href],button:not([disabled]),input,textarea,select,[tabindex]:not([tabindex="-1"])';
+let lastFocused = null;
+
 document.querySelectorAll('[data-modal]').forEach(btn => {
   btn.addEventListener('click', () => {
     const key = btn.dataset.modal;
@@ -107,17 +115,33 @@ document.querySelectorAll('[data-modal]').forEach(btn => {
     if (!data) return;
     modalImg.src = data.src;
     modalImg.alt = data.alt;
+    lastFocused = document.activeElement;
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
     modalClose.focus();
   });
 });
 
+// Focus trap: keep Tab inside the modal while it is open
+overlay.addEventListener('keydown', e => {
+  if (e.key !== 'Tab') return;
+  const focusable = Array.from(overlay.querySelectorAll(FOCUSABLE));
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (e.shiftKey) {
+    if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+  } else {
+    if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+});
+
 function closeModal() {
   overlay.classList.remove('open');
   document.body.style.overflow = '';
+  if (lastFocused) { lastFocused.focus(); lastFocused = null; }
 }
 
 modalClose.addEventListener('click', closeModal);
 overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
