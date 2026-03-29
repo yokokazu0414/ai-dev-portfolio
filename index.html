@@ -4,7 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Claude / Gemini / Cursor を活用したAIプロダクト開発の実績ポートフォリオ" />
+
+  <!-- OGP -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI Dev Portfolio | Vibe Coding × AI" />
+  <meta property="og:description" content="Claude / Gemini / Cursor を活用したAIプロダクト開発の実績ポートフォリオ" />
+  <meta property="og:url" content="https://yokokazu0414.github.io/ai-dev-portfolio/" />
+  <meta property="og:image" content="https://yokokazu0414.github.io/ai-dev-portfolio/image/ESG-Analyzer.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Dev Portfolio | Vibe Coding × AI" />
+  <meta name="twitter:description" content="Claude / Gemini / Cursor を活用したAIプロダクト開発の実績ポートフォリオ" />
+  <meta name="twitter:image" content="https://yokokazu0414.github.io/ai-dev-portfolio/image/ESG-Analyzer.png" />
+
   <title>AI Dev Portfolio | Vibe Coding × AI</title>
+
+  <!-- Favicon (SVG emoji) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet" />
@@ -13,24 +29,24 @@
 <body>
 
   <!-- NAV -->
-  <header class="nav">
+  <header class="nav" id="siteNav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">AI Dev Portfolio</a>
-      <nav>
+      <nav aria-label="メインナビゲーション">
         <ul class="nav-links">
-          <li><a href="#works">Works</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#works" class="nav-anchor" data-section="works">Works</a></li>
+          <li><a href="#about" class="nav-anchor" data-section="about">About</a></li>
+          <li><a href="#contact" class="nav-anchor" data-section="contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="nav-menu-btn" aria-label="メニュー" id="menuBtn">
+      <button class="nav-menu-btn" aria-label="メニューを開く" aria-expanded="false" id="menuBtn">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <ul>
       <li><a href="#works" class="mobile-link">Works</a></li>
       <li><a href="#about" class="mobile-link">About</a></li>
@@ -38,172 +54,174 @@
     </ul>
   </div>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-inner">
-      <p class="hero-label">Vibe Coding × AI Development</p>
-      <h1>AIで、<br>アイデアを形にする。</h1>
-      <p class="hero-sub">Claude / Gemini / Cursor を活用し、ビジネス課題からクリエイティブまで<br class="br-pc">幅広く対応するAIプロダクト開発の実績</p>
-      <div class="hero-actions">
-        <a href="#works" class="btn-primary">実績を見る</a>
-        <a href="#contact" class="btn-ghost">お問い合わせ</a>
-      </div>
-      <div class="hero-tags">
-        <span>Claude API</span>
-        <span>Gemini 2.5</span>
-        <span>Cursor</span>
-        <span>Vibe Coding</span>
-        <span>Next.js</span>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- WORKS -->
-  <section id="works">
-    <div class="section-inner">
-      <div class="section-header">
-        <p class="section-label">Works</p>
-        <h2 class="section-title">開発実績</h2>
-      </div>
-
-      <div class="filter-bar" role="group" aria-label="カテゴリーフィルター">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="business">Business</button>
-        <button class="filter-btn" data-filter="game">Game</button>
-        <button class="filter-btn" data-filter="creative">Creative</button>
-      </div>
-
-      <div class="works-grid" id="worksGrid">
-
-        <article class="work-card" data-category="business">
-          <div class="card-img-wrap" data-modal="esg">
-            <img src="image/ESG-Analyzer.png" alt="ESG Analyzer スクリーンショット" />
-            <div class="card-img-overlay"><span>拡大表示</span></div>
-          </div>
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="card-cat">Business</span>
-            </div>
-            <h3>ESG Analyzer</h3>
-            <p>有価証券報告書・統合報告書などのPDFをアップロードし、AIがESG指標を自動抽出・比較分析するダッシュボード。</p>
-            <div class="card-tags">
-              <span>Claude API</span>
-              <span>PDF解析</span>
-              <span>React</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card" data-category="business">
-          <div class="card-img-wrap" data-modal="excel">
-            <img src="image/Excel-Matcher-Pro.png" alt="Excel Matcher Pro スクリーンショット" />
-            <div class="card-img-overlay"><span>拡大表示</span></div>
-          </div>
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="card-cat">Business</span>
-            </div>
-            <h3>Excel Matcher Pro</h3>
-            <p>受注データと検収データをExcelアップロードだけで自動照合。件数・金額のズレを即座に可視化する業務効率化ツール。</p>
-            <div class="card-tags">
-              <span>自動化</span>
-              <span>Excel</span>
-              <span>Python</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card" data-category="game">
-          <div class="card-img-wrap" data-modal="puyo">
-            <img src="image/Puyopuyo-neon.png" alt="Puyopuyo Neon スクリーンショット" />
-            <div class="card-img-overlay"><span>拡大表示</span></div>
-          </div>
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="card-cat">Game</span>
-            </div>
-            <h3>Puyopuyo Neon</h3>
-            <p>ダークテーマ × ネオンカラーで再構築したぷよぷよ風パズルゲーム。Vibe Coding で一気に実装。</p>
-            <div class="card-tags">
-              <span>JavaScript</span>
-              <span>Neon UI</span>
-              <span>Vibe Coding</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card" data-category="creative">
-          <div class="card-img-wrap" data-modal="sns">
-            <img src="image/SNS-Photo-Generator.png" alt="SNS Photo Generator スクリーンショット" />
-            <div class="card-img-overlay"><span>拡大表示</span></div>
-          </div>
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="card-cat">Creative</span>
-            </div>
-            <h3>SNS Photo Generator</h3>
-            <p>スタイル参考画像とターゲット画像を組み合わせ、Gemini 2.5 Flash でSNS映えする画像を自動生成するツール。</p>
-            <div class="card-tags">
-              <span>Gemini 2.5</span>
-              <span>画像生成</span>
-              <span>Next.js</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-inner">
-      <div class="section-header">
-        <p class="section-label">About</p>
-        <h2 class="section-title">開発スタンス</h2>
-      </div>
-      <div class="about-layout">
-        <div class="about-text-block">
-          <p>AIツールを駆使した <strong>Vibe Coding</strong> スタイルで、アイデアを素早くプロダクトへ変換します。ビジネス業務の自動化からゲーム・クリエイティブツールまで、幅広い領域での開発実績があります。</p>
-          <p>最新のAIモデル（Claude / Gemini）と開発ツール（Cursor）を組み合わせ、従来の数倍のスピードで高品質なプロダクトを届けます。</p>
+  <main>
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-inner">
+        <p class="hero-label reveal">Vibe Coding × AI Development</p>
+        <h1 class="reveal reveal-delay-1">AIで、<br>アイデアを形にする。</h1>
+        <p class="hero-sub reveal reveal-delay-2">Claude / Gemini / Cursor を活用し、ビジネス課題からクリエイティブまで<br class="br-pc">幅広く対応するAIプロダクト開発の実績</p>
+        <div class="hero-actions reveal reveal-delay-3">
+          <a href="#works" class="btn-primary">実績を見る</a>
+          <a href="#contact" class="btn-ghost">お問い合わせ</a>
         </div>
-        <div class="stack-block">
-          <h3 class="stack-label">Tech Stack</h3>
-          <div class="stack-grid">
-            <div class="stack-item"><span class="stack-icon">🤖</span><span>Claude API</span></div>
-            <div class="stack-item"><span class="stack-icon">✨</span><span>Gemini 2.5</span></div>
-            <div class="stack-item"><span class="stack-icon">⚡</span><span>Cursor</span></div>
-            <div class="stack-item"><span class="stack-icon">▲</span><span>Next.js</span></div>
-            <div class="stack-item"><span class="stack-icon">🐍</span><span>Python</span></div>
-            <div class="stack-item"><span class="stack-icon">📊</span><span>Excel / CSV</span></div>
-          </div>
+        <div class="hero-tags reveal reveal-delay-4">
+          <span>Claude API</span>
+          <span>Gemini 2.5</span>
+          <span>Cursor</span>
+          <span>Vibe Coding</span>
+          <span>Next.js</span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-inner contact-inner">
-      <p class="section-label">Contact</p>
-      <h2 class="section-title">お問い合わせ</h2>
-      <p class="contact-sub">お仕事のご依頼・ご相談はお気軽にどうぞ。</p>
-      <div class="contact-links">
-        <a href="#" class="contact-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          X (Twitter)
-        </a>
-        <a href="#" class="contact-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- WORKS -->
+    <section id="works">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="section-label">Works</p>
+          <h2 class="section-title">開発実績</h2>
+        </div>
+
+        <div class="filter-bar reveal" role="group" aria-label="カテゴリーフィルター">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="business">Business</button>
+          <button class="filter-btn" data-filter="game">Game</button>
+          <button class="filter-btn" data-filter="creative">Creative</button>
+        </div>
+
+        <div class="works-grid" id="worksGrid">
+
+          <article class="work-card reveal" data-category="business">
+            <div class="card-img-wrap" data-modal="esg">
+              <img src="image/ESG-Analyzer.png" alt="ESG Analyzer スクリーンショット" loading="lazy" />
+              <div class="card-img-overlay" aria-hidden="true"><span>拡大表示</span></div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat">Business</span>
+              </div>
+              <h3>ESG Analyzer</h3>
+              <p>有価証券報告書・統合報告書などのPDFをアップロードし、AIがESG指標を自動抽出・比較分析するダッシュボード。</p>
+              <div class="card-tags">
+                <span>Claude API</span>
+                <span>PDF解析</span>
+                <span>React</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal reveal-delay-1" data-category="business">
+            <div class="card-img-wrap" data-modal="excel">
+              <img src="image/Excel-Matcher-Pro.png" alt="Excel Matcher Pro スクリーンショット" loading="lazy" />
+              <div class="card-img-overlay" aria-hidden="true"><span>拡大表示</span></div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat">Business</span>
+              </div>
+              <h3>Excel Matcher Pro</h3>
+              <p>受注データと検収データをExcelアップロードだけで自動照合。件数・金額のズレを即座に可視化する業務効率化ツール。</p>
+              <div class="card-tags">
+                <span>自動化</span>
+                <span>Excel</span>
+                <span>Python</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="game">
+            <div class="card-img-wrap" data-modal="puyo">
+              <img src="image/Puyopuyo-neon.png" alt="Puyopuyo Neon スクリーンショット" loading="lazy" />
+              <div class="card-img-overlay" aria-hidden="true"><span>拡大表示</span></div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat">Game</span>
+              </div>
+              <h3>Puyopuyo Neon</h3>
+              <p>ダークテーマ × ネオンカラーで再構築したぷよぷよ風パズルゲーム。Vibe Coding で一気に実装。</p>
+              <div class="card-tags">
+                <span>JavaScript</span>
+                <span>Neon UI</span>
+                <span>Vibe Coding</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card reveal reveal-delay-1" data-category="creative">
+            <div class="card-img-wrap" data-modal="sns">
+              <img src="image/SNS-Photo-Generator.png" alt="SNS Photo Generator スクリーンショット" loading="lazy" />
+              <div class="card-img-overlay" aria-hidden="true"><span>拡大表示</span></div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat">Creative</span>
+              </div>
+              <h3>SNS Photo Generator</h3>
+              <p>スタイル参考画像とターゲット画像を組み合わせ、Gemini 2.5 Flash でSNS映えする画像を自動生成するツール。</p>
+              <div class="card-tags">
+                <span>Gemini 2.5</span>
+                <span>画像生成</span>
+                <span>Next.js</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="section-label">About</p>
+          <h2 class="section-title">開発スタンス</h2>
+        </div>
+        <div class="about-layout">
+          <div class="about-text-block reveal">
+            <p>AIツールを駆使した <strong>Vibe Coding</strong> スタイルで、アイデアを素早くプロダクトへ変換します。ビジネス業務の自動化からゲーム・クリエイティブツールまで、幅広い領域での開発実績があります。</p>
+            <p>最新のAIモデル（Claude / Gemini）と開発ツール（Cursor）を組み合わせ、従来の数倍のスピードで高品質なプロダクトを届けます。</p>
+          </div>
+          <div class="stack-block reveal reveal-delay-1">
+            <h3 class="stack-label">Tech Stack</h3>
+            <div class="stack-grid">
+              <div class="stack-item"><span class="stack-icon">🤖</span><span>Claude API</span></div>
+              <div class="stack-item"><span class="stack-icon">✨</span><span>Gemini 2.5</span></div>
+              <div class="stack-item"><span class="stack-icon">⚡</span><span>Cursor</span></div>
+              <div class="stack-item"><span class="stack-icon">▲</span><span>Next.js</span></div>
+              <div class="stack-item"><span class="stack-icon">🐍</span><span>Python</span></div>
+              <div class="stack-item"><span class="stack-icon">📊</span><span>Excel / CSV</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-inner contact-inner">
+        <p class="section-label reveal">Contact</p>
+        <h2 class="section-title reveal reveal-delay-1">お問い合わせ</h2>
+        <p class="contact-sub reveal reveal-delay-2">お仕事のご依頼・ご相談はお気軽にどうぞ。</p>
+        <div class="contact-links reveal reveal-delay-3">
+          <a href="https://x.com/yokokazu0414" class="contact-btn" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X (Twitter)
+          </a>
+          <a href="https://github.com/yokokazu0414" class="contact-btn" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-inner">
