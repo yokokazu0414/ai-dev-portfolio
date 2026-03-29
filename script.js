@@ -98,11 +98,18 @@ const overlay = document.getElementById('modalOverlay');
 const modalImg = document.getElementById('modalImg');
 const modalClose = document.getElementById('modalClose');
 
+// Detect WebP support once at page load
+const supportsWebP = (() => {
+  const canvas = document.createElement('canvas');
+  return canvas.toDataURL('image/webp').startsWith('data:image/webp');
+})();
+const imgExt = supportsWebP ? 'webp' : 'png';
+
 const imgMap = {
-  esg:   { src: 'image/ESG-Analyzer.png',        alt: 'ESG Analyzer' },
-  excel: { src: 'image/Excel-Matcher-Pro.png',    alt: 'Excel Matcher Pro' },
-  puyo:  { src: 'image/Puyopuyo-neon.png',        alt: 'Puyopuyo Neon' },
-  sns:   { src: 'image/SNS-Photo-Generator.png',  alt: 'SNS Photo Generator' },
+  esg:   { src: `image/ESG-Analyzer.${imgExt}`,        alt: 'ESG Analyzer' },
+  excel: { src: `image/Excel-Matcher-Pro.${imgExt}`,    alt: 'Excel Matcher Pro' },
+  puyo:  { src: `image/Puyopuyo-neon.${imgExt}`,        alt: 'Puyopuyo Neon' },
+  sns:   { src: `image/SNS-Photo-Generator.${imgExt}`,  alt: 'SNS Photo Generator' },
 };
 
 const FOCUSABLE = 'a[href],button:not([disabled]),input,textarea,select,[tabindex]:not([tabindex="-1"])';
